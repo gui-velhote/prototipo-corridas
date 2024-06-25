@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+{% load static %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'prototipo/style.css' %}">
+        <title>Corridas Protótipo</title>
+    </head>
+    <body>
+        <header class="header-span">
+        </header>
+        <main>
+            <div class="rankings">
+                <h1>Rankings</h1>
+                <hr>
+                <table>
+                    <tr class="table-headers">
+                        <th>Posição</th>
+                        <th>Nome</th>
+                        <th>Tempo</th>
+                    </tr>
+                    {% for p in sresults %}
+                    <tr>
+                        <td>{{ p.rank }}</td>
+                        <td class="table-fullname">{{ p.fullname }}</td>
+                        <td>{{ p.time }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr class="user-row">
+                        <td>{{ userRank }}</td>
+                        <td class="table-fullname">{{ fullname.fname }} {{ fullname.lname }}</td>
+                        <td>{{ time }}</td>
+                    </tr>
+                    {% for p in fresults %}
+                    <tr>
+                        <td>{{ p.rank }}</td>
+                        <td class="table-fullname">{{ p.fullname }}</td>
+                        <td>{{ p.time }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div class="back-button">
+                    <button onclick="history.back()">Voltar</button>
+                </div>
+            </div>
+        </main>
+        <footer class="footer-span">
+        </footer>
+    </body>
+</html>

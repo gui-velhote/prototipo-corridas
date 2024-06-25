@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+{% load static %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'prototipo/style.css' %}">
+        <title>Corridas Protótipo</title>
+    </head>
+    <body>
+        <header class="header-span">
+        </header>
+        <main>
+            <div class="busca">
+                <h1>Busca</h1>
+                <form action="{% url 'results' %}" method="get">
+                    <div>
+                        <label for="races">Corrida</label>
+                        <select name="races" class="dropdown-box" id="races">
+                            <option value="MCC">MCC</option>
+                            <option value="OCC">OCC</option>
+                        </select>
+                    </div>
+                    <div class="form-item text-item">
+                        <label for="name">Nome</label><br>
+                        <input class="text-box" type="text" id="name" name="name" placeholder="Nome">           
+                    </div>
+                    <div class="form-item text-item">
+                        <label for="surname">Sobrenome</label><br>
+                        <input class="text-box" type="text" id="surname" name="surname" placeholder="Sobrenome">
+
+                    </div>
+                    <div class="form-item time-item">
+                        <label for="hours">Tempo:</label>
+                        <input type="number" class="number-box" id="hours" name="hours" placeholder="h" min="0" max="59">
+                        <label for="minutes">:</label>
+                        <input type="number" class="number-box" id="minutes" name="minutes" placeholder="min" min="0" max="59">
+                        <label for="seconds">:</label>
+                        <input type="number" class="number-box" id="seconds" name="seconds" placeholder="s" min="0" max="59">
+                    </div>
+                <input class="submit-button" type="submit" value="Buscar">
+                </form>
+            </div>
+        </main>
+        <footer class="footer-span">
+        </footer>
+        <script src="{% static 'prototipo/script.js' %}"></script>
+    </body>
+</html>
